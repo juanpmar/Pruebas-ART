@@ -20,7 +20,7 @@ def FnEntrada():
 
 def FnSalida(Entrada): 
     """
-    Entrega un número aleatorio entero entre 1 y 5 usando como semilla la entrada de la función 1.
+    Entrega un número aleatorio entero entre 1 y 7 usando como semilla la entrada de la función 1.
     """
     if (Entrada >=1 and Entrada<=5 ) and isinstance(Entrada,int): #Evalua la entrada entre 1 a 5 y que sea entero.
         Factor=time.time()# Extrae el valor desde el Epoch en el CPU en segundos 
@@ -44,31 +44,4 @@ R1=FnEntrada()
 #R1=R1 ## Para modificar la entrada.
 R2=FnSalida(R1)
 print("Entrada :",R1," Salida: ", R2)
-"""
-
-
-## Histograma de comprobación de 10000 datos
-"""
-Lista_R1 = []
-Lista_R2 = []
-
-for i in range (10000): # para evaluar multiples veces
-    R1=FnEntrada()
-    R2=FnSalida(R1) 
-    Lista_R1.append(R1)  
-    Lista_R2.append(R2)
-
-
-His1=plt.hist(Lista_R1,bins=5) #plot del histograma de llegada
-plt.xlabel('Valores')
-plt.ylabel('Frecuencia')
-plt.title('Lista Función Entrada R1')
-plt.show()
-
-
-His2=plt.hist(Lista_R2,bins=7) #plot del histograma de salida
-plt.xlabel('Valores')
-plt.ylabel('Frecuencia')
-plt.title('Lista Función R2')
-plt.show()
 """
